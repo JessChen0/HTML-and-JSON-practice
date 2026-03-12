@@ -1,0 +1,15 @@
+---
+title: "HTML_JSON_practice"
+format: html
+editor: visual
+---
+
+## Approach
+
+\(1\) Identify 3 books and record the **title**, **authors**, and **two to three additional attributes** (e.g., publication year, publisher, ISBN, genre, rating). Make sure one book has multiple authors.
+
+\(2\) Create the files in HTML and JSON in textedit and make sure they are similar if not identical in structure.
+
+\(3\) Upload both files onto github.
+
+\(4\) Load each data file separately into R and compare dataframes. (Trying to make them identical if possible).
