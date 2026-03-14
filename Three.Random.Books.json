@@ -1,0 +1,26 @@
+{
+  "title": "Three Random Books",
+  "books": [
+    {
+      "Book Name": "The Revolution Will Not be Funded: Beyond the Non-profit Industrial Complex",
+      "Authors": "INCITE! Women of Color Against Violence",
+      "Publication date": "2009",
+      "Publisher": "South End Press",
+      "Genre": "Non-Fiction"
+    },
+    {
+      "Book Name": "The Unexpected Journey: Finding Strength, Hope, and Yourself on the Caregiving Path",
+      "Authors": "Emma Heming Willis",
+      "Publication Date": "2025",
+      "Publisher": "The Open Field",
+      "Genre": "Self-help"
+    },
+    {
+      "Book Name": "The Book of Elsewhere",
+      "Authors": "Keanu Reeves and China Mieville",
+      "Publication Date": "2024",
+      "Publisher": "Del Rey",
+      "Genre": "Fantasy"
+    }
+  ]
+}
