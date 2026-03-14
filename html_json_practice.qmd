@@ -4,12 +4,43 @@ format: html
 editor: visual
 ---
 
-## Approach
+## Introduction
 
-\(1\) Identify 3 books and record the **title**, **authors**, and **two to three additional attributes** (e.g., publication year, publisher, ISBN, genre, rating). Make sure one book has multiple authors.
+This short assignment practices creating and uploading data tables in HTML and JSON. I have done limited coding in HTML and not done any JSON coding. It was interesting to see the differences in structure for both.
 
-\(2\) Create the files in HTML and JSON in textedit and make sure they are similar if not identical in structure.
+### Data Upload and Analysis
 
-\(3\) Upload both files onto github.
+Uploading both datasets did not present problems. However, I learned that json files can sometimes be temperamental when uploading into a quarto file and had to do some manual adjustments to remove the title. I also had a typo in the json file which I did not noticed but caused some issues when uploaded into this data file. Claude (LLM) was able to diagnose this issue by going into my github code (using the read link I had in my code) to identify the issue. I thought this was pretty amazing and am very impressed by Claude's problem solving ability!
 
-\(4\) Load each data file separately into R and compare dataframes. (Trying to make them identical if possible).
+```{r}
+
+library(rvest)
+library(knitr)
+
+html_ds <- read_html("https://raw.githubusercontent.com/JessChen0/HTML-and-JSON-practice/refs/heads/main/Three.Random.Books.html")
+
+html_books <- html_table(html_ds)[[1]]
+
+kable(html_books)
+
+```
+
+```{r}
+
+library(jsonlite)
+library(knitr)
+
+json_books <- fromJSON("https://raw.githubusercontent.com/JessChen0/HTML-and-JSON-practice/refs/heads/main/Three.Random.Books.json")
+
+json_books_clean <- as.data.frame(json_books$books)
+
+json_books_clean$publication_date <- unlist(json_books_clean$publication_date)
+
+kable(json_books_clean)
+
+
+```
+
+Sources:
+
+References Claude. (2026). Anthropic \[Large language model\]. Accessed Mar 14, 2026.<https://claude.ai/share/df2f4edb-3334-4646-812e-61742c66cd57>
